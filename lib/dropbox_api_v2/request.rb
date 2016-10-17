@@ -52,7 +52,7 @@ module DropboxApiV2
     end
 
     def headers
-      headers = {"Authorization": "Bearer #{@token}", "Content-Type": content_type}
+      headers = {"Authorization" => "Bearer #{@token}", "Content-Type" => content_type}
       headers["Dropbox-API-Arg"] = json_params if file_transfer?
       headers
     end
