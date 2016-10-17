@@ -25,4 +25,8 @@ module DropboxApiV2
   def self.thumbnail(file_path, token, args={})
     Request.new("/files/get_thumbnail", {format: "jpeg", size: "w64h64", path: file_path, token: token, file_transfer: true}.merge(args)).response
   end
+
+  def self.get_temporary_link(file_path, token)
+    Request.new("/files/get_temporary_link", path: file_path, token: token).response
+  end
 end
